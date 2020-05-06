@@ -1,0 +1,50 @@
+{
+  "name": "server-scaffold",
+  "version": "1.0.0",
+  "description": "Scaffolding project for a basic TS server running on Fastify, Typeorm and Swagger",
+  "main": "main.ts",
+  "scripts": {
+    "start": "npm run build && sh ./scripts/startDev.sh",
+    "prettier:check": "prettier --check src/**/!(*.d).ts",
+    "prettier:fix": "prettier --write src/**/!(*.d).ts",
+    "lint": "eslint src/**/!(*.d).ts",
+    "lint:fix": "eslint --fix src/**/!(*.d).ts",
+    "test": "mocha",
+    "test:coverage": "nyc mocha",
+    "build": "webpack",
+    "build:prod": "npm run lint && npm run test && npm run build",
+    "generate:dtos": "json2ts -i src/view/dtos/schemas/**/*.json -o src/view/dtos/ --style.singleQuote",
+    "generate:config": "json2ts -i src/scaffold/config/*.json -o src/scaffold/config/ --style.singleQuote"
+  },
+  "author": "Sandra Wagner",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^6.12.0",
+    "fastify": "^2.13.0",
+    "fastify-swagger": "^2.5.1",
+    "typeorm": "^0.2.24"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "json-schema-to-typescript": "^8.2.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.2",
+    "sqlite3": "^4.1.1",
+    "terser-webpack-plugin": "^2.3.5",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "extension": ["ts"],
+  "spec": "test/**/*.spec.ts",
+  "require": "test/ts-node-require.js",
+  "colors": true
+}

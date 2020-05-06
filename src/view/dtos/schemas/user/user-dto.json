@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "required": ["id","name"],
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "rights": {
+            "type":"array",
+            "items": {"type": "string"}
+        }
+    },
+    "additionalProperties": false
+}
